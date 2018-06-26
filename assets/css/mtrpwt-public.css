@@ -1,0 +1,47 @@
+.widget_recent_entries ul li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-bottom: solid 1px rgba(222,222,222,0.5);
+    list-style: none;
+    position: relative;
+    padding: 20px 8px;
+    overflow: hidden;
+}
+.widget_recent_entries ul li .post_img {
+    float: left;
+    margin-right: 15px;
+    overflow: hidden;
+    background-color: #2a2a2a;
+   
+}
+.widget_recent_entries ul li .post_body {
+    display: block;
+    overflow: hidden;
+}
+.widget_recent_entries ul li .post_body a.rec_post_title{
+    color: #222222;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 26px;
+    display: block;
+    
+}
+
+.post_body a.more-link {
+	 color: #bbb;
+    font-size: 12px; display: inline-block;
+}
+.widget_recent_entries ul li span i {
+    margin-right: 5px;
+}
+.widget_recent_entries ul li span {
+    display: block;
+    font-size: 12px;
+    line-height: 21px;
+    color: #bbb;
+    padding-top: 5px;
+}
+.widget_recent_entries ul li a:hover {
+    color: #ccc; text-decoration: none;
+}
