@@ -30,7 +30,7 @@ Small and fast plugin to display in the sidebar a list of linked titles and thum
 ## Screenshots ##
 
 ###1. RECENT POSTS.###
-![RECENT POSTS.](screenshots/s1.png?raw=true)
+![RECENT POSTS.](screenshots/s3.png?raw=true)
 
 ###2. Widgets (backend).###
-![Widgets (backend).](screenshots/s2.png?raw=true)
+![Widgets (backend).](screenshots/s1.png?raw=true)
