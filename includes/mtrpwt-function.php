@@ -44,6 +44,8 @@ class Mtrecentpostswidgetw_Widget extends WP_Widget {
 			
 			if( ! $show_type = $instance["show_type"] )  $show_type='post';
 			
+			if( ! $show_page_id = $instance["show_page_id"] )  $show_page_id='';
+			
 			if( ! $thumb_h =  absint($instance["thumb_h"] ))  $thumb_h=50;
 			
 			if( ! $thumb_w =  absint($instance["thumb_w"] ))  $thumb_w=50;
@@ -93,7 +95,7 @@ class Mtrecentpostswidgetw_Widget extends WP_Widget {
 			
 				'order' => $sort_order,
 				
-				'post_type' => $show_type 
+				'post_type' => $show_type,
 				
 				);
 			
@@ -218,6 +220,10 @@ class Mtrecentpostswidgetw_Widget extends WP_Widget {
 		$instance["thumb_h"]=absint($new_instance["thumb_h"]);
 		$instance["excerpt"]=esc_attr($new_instance["excerpt"]);
 		$instance["readmore"]=esc_attr($new_instance["readmore"]);
+		$instance["show_page_id"]=esc_attr($new_instance["show_page_id"]);
+		
+		
+		
 		return $instance;
 	}
 	
@@ -231,6 +237,12 @@ class Mtrecentpostswidgetw_Widget extends WP_Widget {
 		$show_type = isset($instance['show_type']) ? esc_attr($instance['show_type']) : 'post';
 		$excerpt_length = isset($instance['excerpt_length']) ? absint($instance['excerpt_length']) : 5;
 		$excerpt_readmore = isset($instance['excerpt_readmore']) ? esc_attr($instance['excerpt_readmore']) : 'Read more &rarr;';
+		$show_page_id = isset($instance['show_page_id']) ? esc_attr($instance['show_page_id']) : '';
+		
+		
+		
+
+		
 ?>
         <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
         <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
@@ -409,9 +421,35 @@ class Mtrecentpostswidgetw_Widget extends WP_Widget {
                 </select>
             </label>
         </p>
+		
+		<p>
+            <label for="<?php echo $this->get_field_id('show_page_id'); ?>"><?php _e('Show Page Type:');?> 
+                <select class="widefat" id="<?php echo $this->get_field_id('show_page_id'); ?>" name="<?php echo $this->get_field_name('show_page_id'); ?>[]" style="height:auto;max-height:6em" multiple="multiple" size="4">
+                <?php
+                   
+					if( $pages = get_pages() ){
+						foreach($pages as $key => $option) {
+							
+							//$selected = in_array( $key, $show_page_id ) ? ' selected="selected" ' : '';
+						
+							echo '<option value="' . $key . '"' . selected($key,$show_page_id,true) . '>' . $option->post_title . '</option>';
+						}
+					}
+					
+                ?>
+				
+				
+                </select>
+            </label>
+        </p>
+		
 <?php
 	}
+	
+	
 }
+
+
 
 
 // register MT Recent Posts Widget With Thumbnails widget
