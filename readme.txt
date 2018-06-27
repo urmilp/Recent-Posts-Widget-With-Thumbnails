@@ -8,13 +8,13 @@ Tags: posts, recent, recent posts, widget, post-thembnails-plugins
 
 
 == Description ==
-Recent WordPresss Posts Widget With Thumbnails.
+Responsive Recent WordPresss Posts Widget With Thumbnails.
 
 
 = Features include: =
 * Easy to add.
 * Given Option in admin.
-* Media size ie  customizable size
+* Media size ie  thumbnail, medium, medium_large, large and full
 * Display post thumbnails, with customizable size and automatic resizing.
 * Display post excerpt, date, comment count, and more. 
 **override the post order to order by; date, title, random, comment count etc.
